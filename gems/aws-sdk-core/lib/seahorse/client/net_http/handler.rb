@@ -19,7 +19,7 @@ module Seahorse
           end
         end
 
-        NETWORK_ERRORS = [
+        NETWORK_ERRORS ||= [
           SocketError, EOFError, IOError, Timeout::Error,
           Errno::ECONNABORTED, Errno::ECONNRESET, Errno::EPIPE,
           Errno::EINVAL, Errno::ETIMEDOUT, OpenSSL::SSL::SSLError,
@@ -32,7 +32,7 @@ module Seahorse
         end
 
         # @api private
-        DNS_ERROR_MESSAGES = [
+        DNS_ERROR_MESSAGES ||= [
           'getaddrinfo: nodename nor servname provided, or not known', # MacOS
           'getaddrinfo: Name or service not known' # GNU
         ]
